@@ -2,14 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
 
-import Titel from './Titel.js';
-import Menue from './Menue.js';
-import Willkommen from './Willkommen.js';
-import Leistungen from './Leistungen.js';
-import Mehr from './Mehr.js';
-import WusstenSieSchon from './WusstenSieSchon.js';
-import Kontakt from './Kontakt.js';
-import Impressum from './Impressum.js';
+
+
+
 
 
 function App() {
@@ -23,7 +18,8 @@ function App() {
         crossOrigin="anonymous"
       />
       <Container fluid>
-        <Willkommen />
+        
+        
       </Container>
     </div>
   );
