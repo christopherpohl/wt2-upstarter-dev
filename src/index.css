@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background: url('./img/CFO.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.main {
+  background-position: center center;
+}
+
+.title {
+  text-align: center;
+}
+
+.menue li {
+  display: inline;
+  margin: 5px;
+}
