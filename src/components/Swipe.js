@@ -5,24 +5,10 @@ import TinderCard from 'react-tinder-card'
 const db = [
   {
     name: 'Richard Hendricks',
-    url: './img/back.jpg'
-  },
-  {
-    name: 'Erlich Bachman',
-    url: './img/back.jpg'
-  },
-  {
-    name: 'Monica Hall',
-    url: './img/back.jpg'
-  },
-  {
-    name: 'Jared Dunn',
-    url: './img/back.jpg'
-  },
-  {
-    name: 'Dinesh Chugtai',
-    url: './img/back.jpg'
+    url: 'https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png',
+    context: 'Dies ist eine Beschreibung'
   }
+
 ]
 
 function Simple () {
@@ -40,17 +26,27 @@ function Simple () {
 
   return (
     <div>
-      <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-      <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-      <h1>React Tinder Card</h1>
-      <div className='cardContainer'>
+   
+      
+      <div id='outer-container'>
+      
         {characters.map((character) =>
           <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-            <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
-              <h3>{character.name}</h3>
+           <div id="inner-container">
+                <div id="row1">
+                <img id="img1" src={character.url}></img>
+                </div>
+                <div id="row2">
+                <div>{character.name}</div>
+                <div>{character.context}</div>
+                </div>
+               
             </div>
+           
+            
           </TinderCard>
         )}
+     
       </div>
       {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
     </div>

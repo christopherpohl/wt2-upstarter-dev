@@ -19,6 +19,8 @@ body {
   background-size: cover;
   -o-background-size: cover;
 
+  
+
 }
 .main{
 	background-position: center center;
@@ -31,4 +33,46 @@ body {
 .menue li{
   display: inline;
   margin: 5px;
+}
+
+#outer-container{
+  
+  background: url("./img/CFO.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+
+  width: 800px;
+}
+
+#inner-container{
+  height: 300px;
+  background-color: #FFFFFF;
+  opacity: 0.6;
+  width: 100%;
+padding: 50px;
+box-sizing: border-box;
+border-radius: 3px 15px 5px 30px;
+}
+
+#row1{
+height: 200px;
+width: 300px;
+
+float: left;
+margin-right: 50px;
+}
+    
+#row2{
+  height: 200px;
+  width: 300px;
+  
+  overflow: hidden;
+  
+}
+
+#img1{
+height: 100%;
+width: 100%;
 }
