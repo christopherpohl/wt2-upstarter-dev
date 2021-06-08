@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
-
+import BurgerMenu from './BurgerMenu';
 
 
 
 
 
 function App() {
+  
+
+  
+
   return (
     
+  
+  
     <div className="App">
+      
+      
+      
       <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,6 +27,15 @@ function App() {
         crossOrigin="anonymous"
       />
       <Container fluid>
+      <Row >
+        <Col md ="11"></Col> 
+          <Col md="1"><BurgerMenu /></Col>
+        </Row>
+        <Row>
+          <Col md="6"></Col>
+          <Col md="6"></Col>
+        </Row>
+       
         
         
       </Container>
