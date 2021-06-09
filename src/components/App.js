@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import BurgerMenu from './BurgerMenu';
 import Footer from './Footer.js';
-import Login from './Login.js';
+import LoginScreen from './LoginScreen.js';
 import Swipe from './Swipe.js';
 
 
@@ -43,7 +43,7 @@ function App() {
           <Col lg="3"></Col>
           <Col lg="6">
             <Route path="/swipe" component={Swipe} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" component={LoginScreen} />
           </Col>
 
           
