@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  phpapache:
+    container_name: FutureTech
+    build: .
+    ports:
+      - 8080:80
+    depends_on:
+      - "db"
+    volumes:
+      - ./htdocs:/var/www/html
+    networks:
+      - webnetwork
+  db:
+    image: mariadb
+    container_name: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./prepare.sql:/docker-entrypoint-initdb.d/prepare.sql
+    networks:
+      - webnetwork
+    
+volumes:
+  htdocs:
+
+networks:
+  webnetwork:
+    driver: bridge
