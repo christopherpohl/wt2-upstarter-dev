@@ -20,7 +20,7 @@ export default function Login() {
       await login(emailRef.current.value, passwordRef.current.value)
       history.push("/")
     } catch {
-      setError("Failed to log in")
+      setError("Die eingegebene Email oder das Passwort ist falsch")
     }
 
     setLoading(false)
@@ -38,20 +38,20 @@ export default function Login() {
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Passwort</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="mt-4 w-100" type="submit">
               Log In
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
+            <Link to="/forgot-password">Passwort vergessen?</Link>
           </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        Keinen Account? <Link to="/signup">Sign Up</Link>
       </div>
     </>
   )
