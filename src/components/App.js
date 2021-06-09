@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
 
+
 import BurgerMenu from './BurgerMenu';
 import Footer from './Footer.js';
 import Middle from './Middle.js';
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossOrigin="anonymous"
       />
+
       <Container fluid>
         
       
@@ -53,8 +56,10 @@ function App() {
       </Row>
         
       </Container>
-    </div>
-  );
+
+    </div>  );
+
 }
+
 
 export default App;
