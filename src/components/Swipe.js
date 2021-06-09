@@ -40,7 +40,7 @@ const db = [
   }
 ]
 
-function Simple () {
+function Swipe () {
   const characters = db
   const [lastDirection, setLastDirection] = useState()
 
@@ -61,7 +61,7 @@ function Simple () {
           <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
              <div id="inner-container">
                 <div id="row1">
-                <img id="img1" src={character.url}></img>
+                <img  width="20%" height="20%" id="img1" src={character.url}></img>
                 </div>
                 <div id="row2">
                 <div><h3>{character.name}</h3></div>
@@ -69,17 +69,17 @@ function Simple () {
                 </div>
                 <div id="row3">
               
-                <img  class="static" src={character.stats_static}></img>
-                <img id="img2" class="active" src={character.stats}></img>
+                <img width="100%" height="45%" class="static" src={character.stats_static}></img>
+                <img width="10%" height="10%" id="img2" class="active" src={character.stats}></img>
                 
                 </div>
             </div>
           </TinderCard>
         )}
       </div>
-      {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+      
     </div>
   )
 }
 
-export default Simple
+export default Swipe

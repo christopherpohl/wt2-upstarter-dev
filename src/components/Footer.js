@@ -25,6 +25,10 @@ function Footer() {
         ><i class="fab fa-instagram"></i
       ></a>
 
+      <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
     
     </section>
     </footer>
