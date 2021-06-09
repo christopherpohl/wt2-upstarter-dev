@@ -7,26 +7,26 @@ function Footer() {
     <section class="lg-4">
      
       <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
+        ><i class="fab fa-facebook-f">Instagram</i
       ></a>
 
       
       <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
+        ><i class="fab fa-twitter">Facebook</i
       ></a>
 
       
       <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-        ><i class="fab fa-google"></i
+        ><i class="fab fa-google">Twitter</i
       ></a>
 
      
       <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
+        ><i class="fab fa-instagram">Youtube</i
       ></a>
 
       <a class="btn btn-outline-light btn-floating m-2" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
+        ><i class="fab fa-instagram">LinkIN</i
       ></a>
 
     
