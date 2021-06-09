@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
+
 import BurgerMenu from './BurgerMenu';
+import Footer from './Footer.js';
+import Middle from './Middle.js';
+
+
 
 
 
@@ -27,16 +32,25 @@ function App() {
         crossOrigin="anonymous"
       />
       <Container fluid>
-      <Row >
-        <Col md ="11"></Col> 
-          <Col md="1"><BurgerMenu /></Col>
-        </Row>
-        <Row>
-          <Col md="6"></Col>
-          <Col md="6"></Col>
-        </Row>
-       
         
+      
+      <Row className="header">
+        <Col lg ="11"></Col> 
+          <Col lg="1"><BurgerMenu /></Col>
+        </Row>
+        <Row className="middle">
+          <Col lg="3"></Col>
+          <Col lg="6"><Middle /></Col>
+          
+        </Row>
+      <Row className="foot">
+        <Col lg="4">
+          
+        </Col>
+        <Col lg="4"><Footer /></Col>
+        
+        
+      </Row>
         
       </Container>
     </div>

@@ -33,16 +33,19 @@ body {
   margin: 5px;
 }
 
-.burger-menu{
-  height: 300%;
-  width: 80%;
-  margin-top: 15%;
- 
-  background: url("./img/burgerM.png") center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  
-  
+
+
+.header{
+  margin: 0.5%;
 }
+
+.middle{
+  margin: 2.5%
+}
+
+.foot{
+  margin-top: 6%;
+ 
+}
+
+
