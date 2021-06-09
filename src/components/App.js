@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import BurgerMenu from './BurgerMenu';
 import Footer from './Footer.js';
-import Middle from './Middle.js';
+import Login from './Login.js';
 import Swipe from './Swipe.js';
 
 
@@ -33,14 +34,18 @@ function App() {
       />
       <Container fluid>
         
-      
+      <Router>
       <Row className="header">
         <Col lg ="11"></Col> 
           <Col lg="1"><BurgerMenu /></Col>
         </Row>
         <Row className="middle">
           <Col lg="3"></Col>
-          <Col lg="6"><Swipe /></Col>
+          <Col lg="6">
+            <Route path="/swipe" component={Swipe} />
+            <Route path="/login" component={Login} />
+          </Col>
+
           
         </Row>
       <Row className="foot">
@@ -51,7 +56,7 @@ function App() {
         
         
       </Row>
-        
+      </Router>
       </Container>
     </div>
   );
