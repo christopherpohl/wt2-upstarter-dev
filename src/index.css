@@ -5,14 +5,9 @@ code {
     monospace;
 }
 
-.fa-facebook-f {
-  background: src="https://www.pngkit.com/png/detail/10-100309_facebook-black-white-icon-facebook-face-book-png.png" no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+.loginbtn{
+  width: 100%;
 }
-
 
 
 body {
