@@ -61,7 +61,7 @@ function Swipe () {
           <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
              <div id="inner-container">
                 <div id="row1">
-                <img  width="20%" height="20%" id="img1" src={character.url}></img>
+                <img id="img1" src={character.url}></img>
                 </div>
                 <div id="row2">
                 <div><h3>{character.name}</h3></div>
@@ -69,8 +69,8 @@ function Swipe () {
                 </div>
                 <div id="row3">
               
-                <img width="100%" height="45%" class="static" src={character.stats_static}></img>
-                <img width="10%" height="10%" id="img2" class="active" src={character.stats}></img>
+                <img  class="static" src={character.stats_static}></img>
+                <img  id="img2" class="active" src={character.stats}></img>
                 
                 </div>
             </div>
