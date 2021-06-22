@@ -7,6 +7,7 @@ import BurgerMenu from './BurgerMenu';
 import Footer from './Footer.js';
 import Login from './Login.js';
 import Swipe from './Swipe.js';
+import SocialFollow from "./SocialFollow";
 
 
 
@@ -58,6 +59,7 @@ function App() {
       </Row>
       </Router>
       </Container>
+      <SocialFollow/>
     </div>
   );
 }
