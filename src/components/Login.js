@@ -28,16 +28,6 @@ function Login() {
           </div>
         </Card.Body>
       </Card>
-     
-    
-    
-  
-
-    
-    
-
-    
-
 
   ); 
 }

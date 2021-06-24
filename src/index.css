@@ -1,15 +1,4 @@
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.loginbtn{
-  width: 100%;
-}
-
-
+/* Background */
 body {
   background: url("./img/CFO.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -22,17 +11,8 @@ body {
 	background-position: center center;
 }
 
-.title{
-	text-align: center;
-}
 
-.menue li{
-  display: inline;
-  margin: 5px;
-}
-
-
-/* Gid */
+/* Gid Layout */
 .header{
   margin: 0.5%;
 }
@@ -40,10 +20,39 @@ body {
 .middle{
   margin: 1%
 }
-
 .foot{
-  margin-top: 37.5%;
- 
+  margin-top: 3%;
+}
+
+
+/* Burger Menu */
+.burg-btn{
+  background-color: blanchedalmond;
+  border-radius: 30px;
+  text-align: center;
+  width: 110%;
+}
+
+.burg-nav{
+  text-align: right;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.burg-links > ul li{
+  float: right;
+  list-style: none;
+  margin-right: 15px;
+  margin-bottom: 8px;
+}
+
+li > div > a{
+  color:black;
+  font-size: 18px;  
+}
+
+.svg-inline--fa{
+  font-size: 60px;
 }
 
 
@@ -52,12 +61,15 @@ body {
   position: absolute;
 }
 
+.cardContainer{
+  height: 530px;
+}
 
 #inner-container{
  
-  background-color: #FFFFFF;
-  height: 100%;
-  width: 100%;
+background-color: #FFFFFF;
+height: 100%;
+width: 100%;
 padding: 50px;
 box-sizing: border-box;
 border-radius: 20px;
@@ -114,53 +126,54 @@ box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
     
   }
   
-  
-  
-  
-  
-  /**checkpoint **/
+
+  .container{
+    max-width: 100% !important;
+  }
+
+  #img1{
+    height: 100%;
+    width: 100%;
+    }
+    
+    #img2{
+      
+      height: 200px;
+      width: 600px;
+  } 
   
 
- 
-#img1{
-  height: 100%;
-  width: 100%;
+
+  /* Footer */
+  .social-container{
+    text-align: center;
+  
+  }
+
+  .social-container > a > svg{
+    font-size: 48px;
+  }
+
+  .social-container > a{
+    padding: 5px;
+  }
+
+  a.git{
+  color: black;
+}
+  a.youtube {
+    color: #eb3223;
   }
   
-  #img2{
-    
-    height: 200px;
-    width: 600px;
-    } 
-
-    .social-container {
-      background: #eee;
-      padding: 25px 50px;
-    }
+  a.facebook {
+    color: #4968ad;
+  }
   
-    a.social {
-      margin: 0 1rem;
-      transition: transform 250ms;
-      display: inline-block;
-    }
+  a.twitter {
+    color: #49a1eb;
+  }
   
-    a.social:hover {
-      transform: translateY(-2px);
-    }
+  a.instagram {
+    color: black;
+  }
   
-    a.youtube {
-      color: #eb3223;
-    }
-    
-    a.facebook {
-      color: #4968ad;
-    }
-    
-    a.twitter {
-      color: #49a1eb;
-    }
-    
-    a.instagram {
-      color: black;
-    }
-

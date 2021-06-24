@@ -54,8 +54,6 @@ function Swipe () {
   }
 
   return (
-    <div>
-
       <div className='cardContainer'>
         {characters.map((character) =>
           <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
@@ -78,7 +76,7 @@ function Swipe () {
         )}
       </div>
       
-    </div>
+    
   )
 }
 
