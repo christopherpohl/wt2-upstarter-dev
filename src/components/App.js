@@ -6,6 +6,9 @@ import Login from './Login.js';
 import Swipe from './Swipe.js';
 import Footer from './Footer.js';
 import Burger from './Burger.js';
+import Profil from './Profil.js';
+import Buttons from  './Buttons.js'
+
 
 
 
@@ -30,8 +33,13 @@ function App() {
       <Row className="middle">
         <Col lg="3"></Col>
         <Col lg="6">
-          <Route path="/swipe" component={Swipe} />
+          <Switch>
           <Route path="/login" component={Login} />
+          <Route path="/swipe" component={Swipe} />
+          <Route path="/profil" component={Profil} />
+          <Route path="/landing" component={Buttons}/>          
+          <Route path="/" component={Buttons} />
+          </Switch>
         </Col>          
       </Row>
       

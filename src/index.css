@@ -24,10 +24,41 @@ body {
   margin-top: 3%;
 }
 
+a:hover{
+  text-decoration: none !important;
+  color: black !important; 
+}
+
+/*Landing */
+.landing-links{
+  min-height: 530px;
+}
+.land-btn > a{
+  font-size: 28px;
+}
+.landing-links > ul {
+  display: flex;
+}
+
+.landing-links >ul .lBtn{
+  padding-right: 260px;
+}
+.landing-links > ul li{
+  list-style: none; 
+    margin-top: 60%
+}
+
+.land-btn{
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  text-align: center;
+  width: 192px;
+  
+}
 
 /* Burger Menu */
 .burg-btn{
-  background-color: blanchedalmond;
+  background-color: #FFFFFF;
   border-radius: 30px;
   text-align: center;
   width: 110%;
