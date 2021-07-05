@@ -58,7 +58,7 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Passwort</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordRef}
@@ -66,7 +66,7 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label>Passwort bestätigen</Form.Label>
               <Form.Control
                 type="password"
                 ref={passwordConfirmRef}
@@ -74,13 +74,13 @@ export default function UpdateProfile() {
               />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Update
+              aktualisieren
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/">Cancel</Link>
+        <Link to="/">Abbruch</Link>
       </div>
     </>
   )

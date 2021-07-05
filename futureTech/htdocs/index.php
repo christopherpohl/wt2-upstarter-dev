@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
 use DI\Container;
 
-require 'ToDoInterface.php';
+require 'UserInterface.php';
 
 require 'vendor/autoload.php';
 
@@ -12,11 +12,11 @@ $container = new Container();
 
 $container->set('db', function() {
     $settings = [
-        "host" => "mariadb",
+        "host" => "FutureTechDB",
         "port" => "3306",
         "dbname" => "FutureTech",
         "user" => "ft_user",
-        "pass" => "1234",
+        "pass" => "Bochum#2020",
     ];
     $dsn = 'mysql:host=' . $settings['host'] . ';port=' . $settings['port'] . ';dbname=' . $settings['dbname'];
     $options = [
@@ -49,38 +49,24 @@ $app->get('/{name}', function (Request $request, Response $response,array $args)
     return $response;
 });
 
-
-
-
-$app->get('/api/todos', function (Request $request, Response $response, array $args){
-    $todoCreator = new ToDoInterface($this->get('db'));
-    $todos = $todoCreator->selectTodos()->fetchAll(PDO::FETCH_ASSOC);
-	$response->getBody()->write(json_encode($todos));
-    /*  
-    foreach($todos as $x => $x_value){
-        $response->getBody()->write($x_value['descr'] . " ");
-    }
-    */
+$app->get('/api/user', function (Request $request, Response $response, array $args){
+    $userFace = new UserInterface($this->get('db'));
+    $values = $userFace->selectUsers()->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($values));
     return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 });
 
-$app->delete('/api/todos/{todo_id}', function (Request $request, Response $response, array $args){
-    $todo_id = $args["todo_id"];
-    if(is_numeric($todo_id)){
-        $todoCreator = new ToDoInterface($this->get('db'));
-        $todo = $todoCreator->deleteTodo($todo_id)->fetchAll(PDO::FETCH_ASSOC);
-        $response->getBody()->write(json_encode($todo));
+$app->get('/api/user/{user_id}', function (Request $request, Response $response, array $args){
+    $user_id = $args["user_id"];
+    if(is_numeric($user_id)){
+        $userFace = new UserInterface($this->get('db'));
+        $value = $userFace->selectUserByID($user_id)->fetchAll(PDO::FETCH_ASSOC);
+        $response->getBody()->write(json_encode($value));
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     }
 	return $response->withStatus(400);
 });
 
-$app->post('/api/todos', function (Request $request, Response $response, array $args){
-    $rawData = $request->getBody();
-    $todoCreator = new ToDoInterface($this->get('db'));
-    $todo = $todoCreator->insertTodo(json_decode($rawData, true))->fetchAll(PDO::FETCH_ASSOC);
-    $response->getBody()->write(json_encode($todo));
-	return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
-});
+
 
 $app->run();

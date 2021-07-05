@@ -8,6 +8,8 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
+import Swipe from "./Swipe"
+import Settings from "./Settings"
 
 function LoginScreen() {
   return (
@@ -24,6 +26,8 @@ function LoginScreen() {
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/swipe" component={Swipe} />
+              <Route path="/settings" component={Settings} />
             </Switch>
           </AuthProvider>
         </Router>

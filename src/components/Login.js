@@ -1,58 +1,37 @@
+
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
+
 import { Link, useHistory } from "react-router-dom"
 
-export default function Login() {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const { login } = useAuth()
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const history = useHistory()
 
-  async function handleSubmit(e) {
-    e.preventDefault()
 
-    try {
-      setError("")
-      setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
-    } catch {
-      setError("Die eingegebene Email oder das Passwort ist falsch")
-    }
-
-    setLoading(false)
-  }
-
+function Login() {
   return (
-    <>
+    
       <Card>
         <Card.Body>
           <h2 className="text-center mb-14" >Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          <Form action="/swipe">
+          
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type="email"/>
             </Form.Group>
             <Form.Group id="password">
               <Form.Label>Passwort</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control type="password"/>
             </Form.Group>
-            <Button disabled={loading} className="mt-4 w-100" type="submit">
-              Log In
-            </Button>
+            <input  className="loginbtn"type="submit" value="Login" />
           </Form>
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password">Passwort vergessen?</Link>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Keinen Account? <Link to="/signup">Sign Up</Link>
-      </div>
-    </>
-  )
+
+  ); 
 }
+
+export default Login;
+

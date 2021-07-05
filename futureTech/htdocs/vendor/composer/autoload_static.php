@@ -19,7 +19,6 @@ class ComposerStaticInit3bb22e18a7714d05ca27442431da132e
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Slim\\Psr7\\' => 10,
-            'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -47,7 +46,6 @@ class ComposerStaticInit3bb22e18a7714d05ca27442431da132e
         ),
         'F' => 
         array (
-            'FutureTech\\' => 11,
             'Fig\\Http\\Message\\' => 17,
             'FastRoute\\' => 10,
         ),
@@ -67,10 +65,6 @@ class ComposerStaticInit3bb22e18a7714d05ca27442431da132e
         'Slim\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/psr7/src',
-        ),
-        'Slim\\Middleware\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dyorg/slim-token-authentication/src',
         ),
         'Slim\\' => 
         array (
@@ -121,10 +115,6 @@ class ComposerStaticInit3bb22e18a7714d05ca27442431da132e
         'Invoker\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/invoker/src',
-        ),
-        'FutureTech\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'Fig\\Http\\Message\\' => 
         array (

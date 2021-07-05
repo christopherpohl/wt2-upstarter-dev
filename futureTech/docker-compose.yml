@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   phpapache:
-    container_name: FutureTech
+    container_name: FutureTechBackend
     build: .
     ports:
       - 8080:80
@@ -13,11 +13,11 @@ services:
       - webnetwork
   db:
     image: mariadb
-    container_name: mariadb
+    container_name: FutureTechDB
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_ROOT_PASSWORD: einfachBochum#2020
     volumes:
       - ./prepare.sql:/docker-entrypoint-initdb.d/prepare.sql
     networks:

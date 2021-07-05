@@ -27,24 +27,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '7d0ee698566b5586841dcf4b7c96d6417d4cb930',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '7d0ee698566b5586841dcf4b7c96d6417d4cb930',
     ),
     'defuse/php-encryption' => 
     array (
@@ -54,15 +54,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '77880488b9954b7884c25555c2a0ea9e7053f9d2',
-    ),
-    'dyorg/slim-token-authentication' => 
-    array (
-      'pretty_version' => '0.3.3',
-      'version' => '0.3.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '08847d3ce38e47c422d46389886d0bd8bf4a9cb2',
     ),
     'fig/http-message-util' => 
     array (
@@ -281,12 +272,12 @@ private static $installed = array (
     ),
     'slim/slim' => 
     array (
-      'pretty_version' => '4.8.1',
-      'version' => '4.8.1.0',
+      'pretty_version' => '4.8.0',
+      'version' => '4.8.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c8934c35d9d98b1a1df9f99ee69b77a59e0aa820',
+      'reference' => 'c9bdc9e0d2f8613055632334ec6711b965d5fdf3',
     ),
     'symfony/polyfill-php80' => 
     array (
