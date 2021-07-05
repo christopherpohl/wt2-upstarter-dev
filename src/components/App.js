@@ -11,7 +11,6 @@ import LoginScreen from './LoginScreen.js';
 import Login from './Login.js';
 
 import Swipe from './Swipe.js';
-import Footer from './Footer.js';
 import Burger from './Burger.js';
 import Profil from './Profil.js';
 import Buttons from  './Buttons.js'
