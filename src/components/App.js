@@ -10,13 +10,13 @@ import Footer from './Footer.js';
 import Burger from './Burger.js';
 import Profil from './Profil.js';
 import Buttons from  './Buttons.js';
-import LoginB from "./LoginB.js";
+
 
 import Login from "./Login";
-import BurgerMenu from './BurgerMenu';
-import Footer from './Footer.js';
+
+
 import LoginScreen from './LoginScreen.js';
-import Swipe from './Swipe.js';
+
 import Settings from './Settings.js';
 import Dashboard from './Dashboard.js';
 
@@ -46,7 +46,7 @@ function App() {
         <Col lg="3"></Col>
         <Col lg="6">
           <Switch>
-          <Route path="/login" component={LoginB} />
+          <Route path="/login" component={Login} />
           <Route path="/swipe" component={Swipe} />
           <Route path="/profil" component={Profil} />
           <Route path="/landing" component={Buttons}/>          
