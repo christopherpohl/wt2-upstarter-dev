@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import TinderCard from '../react-tinder-card/index'
-import TinderCard from 'react-tinder-card'
+import Card from 'react-tinder-card'
 
 const db = [
   {
@@ -58,7 +58,7 @@ function Swipe () {
 
       <div className='cardContainer'>
         {characters.map((character) =>
-          <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+          <Card className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
              <div id="inner-container">
                 <div id="row1">
                 <img id="img1" src={character.url}></img>
@@ -68,13 +68,12 @@ function Swipe () {
                 <div>{character.context}</div>
                 </div>
                 <div id="row3">
-              
+
                 <img  class="static" src={character.stats_static}></img>
-                <img  id="img2" class="active" src={character.stats}></img>
-                
+                <img  id="img2" class="active" src={character.stats}></img> 
                 </div>
             </div>
-          </TinderCard>
+          </Card>
         )}
       </div>
       

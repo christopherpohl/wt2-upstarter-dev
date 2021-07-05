@@ -7,6 +7,7 @@ import BurgerMenu from './BurgerMenu';
 import Footer from './Footer.js';
 import LoginScreen from './LoginScreen.js';
 import Swipe from './Swipe.js';
+import { Abo } from './abo.js';
 
 
 
@@ -42,7 +43,11 @@ function App() {
         <Row className="middle">
           <Col lg="3"></Col>
           <Col lg="6">
+
+          <Abo />
+
             <Route path="/swipe" component={Swipe} />
+          
             <Route path="/login" component={LoginScreen} />
           </Col>
 
