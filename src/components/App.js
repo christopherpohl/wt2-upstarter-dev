@@ -4,8 +4,8 @@ import {Container, Row, Col} from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
-import BurgerMenu from './BurgerMenu';
-import Footer from './Footer.js';
+//import BurgerMenu from './BurgerMenu';
+import Footer from './footer.js';
 import LoginScreen from './LoginScreen.js';
 
 import Login from './Login.js';
@@ -32,7 +32,7 @@ function App() {
 
       <Row className="header">
         <Col lg ="11"></Col> 
-          <Col lg="1"><BurgerMenu /></Col>
+          
         </Row>
         <Row className="middle">
           <Col lg="3"></Col>
@@ -40,6 +40,7 @@ function App() {
             <Route path="/swipe" component={Swipe} />
             <Route path="/login" component={LoginScreen} />
           </Col>
+        </Row>  
 
 
       <Row className="header">
@@ -70,5 +71,126 @@ function App() {
       </Container>
     </div>
   );
+  }
 
-export default App; 
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

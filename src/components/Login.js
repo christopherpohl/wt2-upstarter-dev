@@ -57,5 +57,5 @@ export default function Login() {
     </>
   )
 
-  ); 
+  ; 
 }
