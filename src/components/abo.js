@@ -45,13 +45,15 @@ const images = [
   `https://assets.imgix.net/tutorials/${imagePath}.webp`;
 
 
-  export const Abo = () => (
+
+  function Abo () {
+ return(
       
     <div id="container"> 
     <div className="gallery">
        
       {images.map(image => (
-        <div id="container">
+        <div id="inner-abo-container">
         <img id="img1" src={image.url}></img>
         <div class="overlay">{image.name}</div>
         
@@ -62,4 +64,6 @@ const images = [
 
     </div>
     </div>
-  );
+  )};
+
+  export default Abo
