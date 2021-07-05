@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useFetch from "react-fetch-hook"
 import Card from 'react-tinder-card'
+import axios from 'axios';
 
 const db = [
   {
@@ -44,7 +45,25 @@ function Swipe () {
  
   const { isLoading, data } = useFetch("http://localhost:8080/api/user");
   console.log(data);
+
+
+
+  axios.post('http://localhost:8080/api/addUser/', {
+    benutzername: 'Added_user',
+    passwort: '129839843',
+    email:"test@added.de",
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
   
+  const new_data = { id: 4, benutzername: "Added_user", passwort:"123456789", email:"test@added.de"  };
+
+  //axios.post('http://localhost:8080/api/user', new_data);
+
   const characters = db
   const [lastDirection, setLastDirection] = useState()
 
