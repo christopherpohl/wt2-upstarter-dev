@@ -26,14 +26,20 @@ export default function Dashboard() {
           <h2 className="text-center mb-4">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
+          <Link to="/swipe" className="btn btn-primary w-100 mt-3">
+            Swipe
+          </Link>
           <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
+            Profil aktualisieren
+          </Link>
+          <Link to="/settings" className="btn btn-primary w-100 mt-3">
+            Einstellungen
           </Link>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
         <Button variant="link" onClick={handleLogout}>
-          Log Out
+          Abmelden
         </Button>
       </div>
     </>

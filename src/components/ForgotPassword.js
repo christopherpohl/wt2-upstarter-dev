@@ -39,7 +39,7 @@ export default function ForgotPassword() {
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
-              Reset Password
+              Passwort zurücksetzen
             </Button>
           </Form>
           <div className="w-100 text-center mt-3">
@@ -48,7 +48,7 @@ export default function ForgotPassword() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        Sie haben noch keinen Account? <Link to="/signup">Sign Up</Link>
       </div>
     </>
   )
