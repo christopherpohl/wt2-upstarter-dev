@@ -1,19 +1,31 @@
+
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Login from './Login.js';
+
+
 import Swipe from './Swipe.js';
 import Footer from './Footer.js';
 import Burger from './Burger.js';
 import Profil from './Profil.js';
-import Buttons from  './Buttons.js'
+import Buttons from  './Buttons.js';
+import LoginB from "./LoginB.js";
+
+import Login from "./Login";
+import BurgerMenu from './BurgerMenu';
+import Footer from './Footer.js';
+import LoginScreen from './LoginScreen.js';
+import Swipe from './Swipe.js';
+import Settings from './Settings.js';
+import Dashboard from './Dashboard.js';
 
 
 
 
 function App() {
   return (
+
     <div className="App">
       <link
         rel="stylesheet"
@@ -34,11 +46,12 @@ function App() {
         <Col lg="3"></Col>
         <Col lg="6">
           <Switch>
-          <Route path="/login" component={Login} />
+          <Route path="/login" component={LoginB} />
           <Route path="/swipe" component={Swipe} />
           <Route path="/profil" component={Profil} />
           <Route path="/landing" component={Buttons}/>          
           <Route path="/" component={Buttons} />
+
           </Switch>
         </Col>          
       </Row>
@@ -51,6 +64,7 @@ function App() {
       </Router>
       </Container>
     </div>
+
   );
 }
 

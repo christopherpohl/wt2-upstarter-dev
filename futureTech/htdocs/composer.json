@@ -2,6 +2,12 @@
     "require": {
         "slim/slim": "^4.8",
         "slim/psr7": "^1.4",
-        "php-di/slim-bridge": "^3.1"
+        "php-di/slim-bridge": "^3.1",
+        "dyorg/slim-token-authentication": "^0.3.3",
+        "league/oauth2-server": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {"FutureTech\\": "src/"
+        }
     }
 }
