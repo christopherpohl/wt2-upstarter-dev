@@ -43,7 +43,7 @@ const db = [
 
 function Swipe () {
  
-  const { isLoading, data } = useFetch("http://localhost:8080/api/username/bbbb4");
+  const { isLoading, data } = useFetch("http://localhost:8080/api/user");
   console.log(data);
 
 
@@ -64,7 +64,7 @@ function Swipe () {
 
   return isLoading ? (
 
-    <div>Loading...</div> ): (
+    <div></div> ): (
   
 
       <div className='cardContainer d-flex align-items-center justify-content-center'>

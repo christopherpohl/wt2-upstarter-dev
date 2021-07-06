@@ -134,23 +134,8 @@ $app->delete('/api/deleteAbos/{idAbo}', function (Request $request, Response $re
 
 
 
-$app->post('/api/addUser/', function (Request $request, Response $response, array $args){
-    $rawData = $request->getBody();
-    $userFace = new UserInterface($this->get('db'));
-    $value = $userFace->addUser($args)->fetchAll(PDO::FETCH_ASSOC);
-    $response->getBody()->write(json_encode($value));
-    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
-});
 
 
-$app->get('/api/username/{username}', function (Request $request, Response $response, array $args){
-    $username = $args["username"];
- 
-    $userFace = new UserInterface($this->get('db'));
-    $value = $userFace->selectUserByUsername($username)->fetchAll(PDO::FETCH_ASSOC);
-    $response->getBody()->write(json_encode($value));
-    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
-});
 
 
 

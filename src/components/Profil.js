@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, {useState } from "react"
 import {faBars} from '@fortawesome/free-solid-svg-icons'
+import useFetch from "react-fetch-hook"
 
 const db = {
     name: 'Richard Hendricks',
@@ -12,19 +13,27 @@ const db = {
 
 
 
+
+
+
+
 function Profil() {
-  
+  const { isLoading, data } = useFetch("http://localhost:8080/api/user/"+localStorage.getItem('user'));
+    
     const character = db;
   
   
-    return (
+    return isLoading ? (
+
+      <div></div> ): ( 
+        data.map((data) =>
     <div id="inner-container">
         <div id="row1">
         <img id="img1" src={character.url}></img>
         </div>
         <div id="row2">
-        <div><h3>{character.name}</h3></div>
-        <div>{character.context}</div>
+        <div><h3>{data.benutzername}</h3></div>
+        <div>{data.beschreibung}</div>
         </div>
         <div id="row3">
       
@@ -35,7 +44,7 @@ function Profil() {
     </div>
       
 
-  )
+  ))
 }
 
 export default Profil;

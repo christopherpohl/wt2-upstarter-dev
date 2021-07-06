@@ -8,7 +8,7 @@ export default function Settings() {
     const [changePW, setChangePW] = useState(false)
     if(changePW){
         
-        fetch('http://localhost:8080/api/changePW', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({"passwort" : 'ZONKKKK' ,"userid" : 2}) })
+        fetch('http://localhost:8080/api/changePW', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({"passwort" : 'ZONKKKK' ,"userid" : localStorage.getItem('user')}) })
         .then(res => res.json())
         .then((result) => {
             setChangePW(!changePW);
@@ -19,7 +19,7 @@ export default function Settings() {
     const [changeEM, setChangeEM] = useState(false)
     if(changeEM){
         
-        fetch('http://localhost:8080/api/changeEM', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({"email" : 'ZONKKKK' ,"userid" : 2}) })
+        fetch('http://localhost:8080/api/changeEM', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({"email" : 'ZONKKKK' ,"userid" : localStorage.getItem('user')}) })
         .then(res => res.json())
         .then((result) => {
             setChangeEM(!changeEM);

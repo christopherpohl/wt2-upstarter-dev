@@ -13,14 +13,16 @@ import Buttons from  './Buttons.js';
 import Logout from './logout.js';
 
 
+
+
 //import Login from "./Login";
 
 import Login from './Login/LoginC';
 
-import LoginScreen from './LoginScreen.js';
+
 
 import Settings from './Settings.js';
-import Dashboard from './Dashboard.js';
+
 
 import useFetch from "react-fetch-hook"
 
@@ -63,7 +65,8 @@ function App() {
           <Route path="/swipe" component={Swipe} />
           <Route path="/logout" component={Logout} />
           <Route path="/profil" component={Profil} />
-          <Route path="/landing" component={Buttons}/>          
+          <Route path="/landing" component={Buttons}/>        
+          <Route path="/settings" component={Settings}/>   
           <Route path="/" component={Buttons} />
 
           </Switch>
