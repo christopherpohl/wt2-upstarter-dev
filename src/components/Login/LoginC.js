@@ -48,7 +48,7 @@ class LoginC extends React.Component {
                 const id = storage.map((items) =>items.id);
                 if(passwort==password)
                     {
-                        sessionStorage.setItem('user', id);
+                        localStorage.setItem('user', id);
                         window.location.reload();
                     }
                 else if(passwort!=password){alert("Inkorrekte Anmeldedaten")}

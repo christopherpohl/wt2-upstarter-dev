@@ -10,6 +10,7 @@ import Footer from './Footer.js';
 import Burger from './Burger.js';
 import Profil from './Profil.js';
 import Buttons from  './Buttons.js';
+import Logout from './logout.js';
 
 
 //import Login from "./Login";
@@ -27,9 +28,9 @@ import axios from 'axios';
 
 function App() {
 
-  
-  if(!sessionStorage.getItem('user')) {
-    console.log(sessionStorage.getItem('user'));
+  console.log(localStorage.getItem('user'));
+  if(!localStorage.getItem('user')) {
+    console.log(localStorage.getItem('user'));
     return <Login/>
   }
 
@@ -60,6 +61,7 @@ function App() {
           <Switch>
      
           <Route path="/swipe" component={Swipe} />
+          <Route path="/logout" component={Logout} />
           <Route path="/profil" component={Profil} />
           <Route path="/landing" component={Buttons}/>          
           <Route path="/" component={Buttons} />
