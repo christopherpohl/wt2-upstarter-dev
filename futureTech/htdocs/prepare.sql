@@ -28,9 +28,9 @@ CREATE TABLE `Abo`
 CREATE TABLE `Profil` 
 ( 
 	`id` integer NOT NULL,
+	`firmenname` VARCHAR(32),
 	`bild` BLOB,
-	`beschreibung` TEXT,
-	`bildprodukt` BLOB
+	`beschreibung` TEXT
 ); 
 
 CREATE TABLE `Abo_Profil` 

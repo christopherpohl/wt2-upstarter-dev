@@ -1,4 +1,10 @@
 <?php
+
+
+
+header("Access-Control-Allow-Origin: *");
+
+
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
@@ -82,6 +88,7 @@ $app->get('/api/user/{user_id}', function (Request $request, Response $response,
 });
 
 
+
 $app->post('/api/addUser', function (Request $request, Response $response, array $args){
     $rawData = $request->getBody();
     $userFace = new UserInterface($this->get('db'));
@@ -123,6 +130,26 @@ $app->delete('/api/deleteAbos/{idAbo}', function (Request $request, Response $re
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     }
 	return $response->withStatus(400);
+});
+
+
+
+$app->post('/api/addUser/', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->addUser($args)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
+
+$app->get('/api/username/{username}', function (Request $request, Response $response, array $args){
+    $username = $args["username"];
+ 
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->selectUserByUsername($username)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 });
 
 
