@@ -83,5 +83,17 @@ $app->post('/api/addUser/', function (Request $request, Response $response, arra
 });
 
 
+$app->get('/api/username/{username}', function (Request $request, Response $response, array $args){
+    $username = $args["username"];
+ 
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->selectUserByUsername($username)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
+
+
+
 
 $app->run();

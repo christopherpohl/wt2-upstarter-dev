@@ -1,16 +1,12 @@
-import React from "react"
-import { Route, Redirect } from "react-router-dom"
-import { useAuth } from "../contexts/AuthContext"
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
-export default function PrivateRoute({ component: Component, ...rest }) {
-  const { currentUser } = useAuth()
+export const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={props => (
+        localStorage.getItem('user')
+            ? <Component {...props} />
+            : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+    )} />
+)
 
-  return (
-    <Route
-      {...rest}
-      render={props => {
-        return currentUser ? <Component {...props} /> : <Redirect to="/login" />
-      }}
-    ></Route>
-  )
-}
+export default PrivateRoute

@@ -15,7 +15,7 @@ function Burger() {
         menu = 
         <div className="burg-links" >
             <ul>
-            <li><div className="burg-btn"><a href="/">Ausloggen</a></div></li>
+            <li><div className="burg-btn"><a  onClick={sessionStorage.removeItem('user')} href="/">Ausloggen</a></div></li>
             <li><div className="burg-btn"><a href="/">Optionen</a></div></li>
             <li><div className="burg-btn"><a href="/swipe">Swipe Bereich</a></div></li>
             <li><div className="burg-btn"><a href="/profil">Mein Profil</a></div></li>

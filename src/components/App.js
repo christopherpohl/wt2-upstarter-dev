@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -12,8 +12,9 @@ import Profil from './Profil.js';
 import Buttons from  './Buttons.js';
 
 
-import Login from "./Login";
+//import Login from "./Login";
 
+import Login from './Login/LoginC';
 
 import LoginScreen from './LoginScreen.js';
 
@@ -22,10 +23,16 @@ import Dashboard from './Dashboard.js';
 
 import useFetch from "react-fetch-hook"
 
+import axios from 'axios';
 
 function App() {
- 
+
   
+  if(!sessionStorage.getItem('user')) {
+    console.log(sessionStorage.getItem('user'));
+    return <Login/>
+  }
+
   return (
 
     <div className="App">
@@ -51,7 +58,7 @@ function App() {
         <Col lg="3"></Col>
         <Col lg="6">
           <Switch>
-          <Route path="/login" component={Login} />
+     
           <Route path="/swipe" component={Swipe} />
           <Route path="/profil" component={Profil} />
           <Route path="/landing" component={Buttons}/>          

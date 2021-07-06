@@ -21,8 +21,16 @@ final class UserInterface {
         return $stmt;
     }
 
+
+    public function selectUserByUsername($username){
+        $sql = "SELECT * FROM User WHERE benutzername = ?;";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute([$username]);
+        return $stmt;
+    }
+
     public function addUser($array){
-        $sql = "INSERT INTO Abo_Profil VALUES (4,1);";
+        $sql = "INSERT INTO Abo_Profil VALUES (4);";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return $stmt;
