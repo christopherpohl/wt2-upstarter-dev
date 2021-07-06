@@ -82,8 +82,6 @@ $app->get('/api/user/{user_id}', function (Request $request, Response $response,
 });
 
 
-
-
 $app->post('/api/addUser', function (Request $request, Response $response, array $args){
     $rawData = $request->getBody();
     $userFace = new UserInterface($this->get('db'));
@@ -91,6 +89,43 @@ $app->post('/api/addUser', function (Request $request, Response $response, array
     $response->getBody()->write(json_encode($value));
 	return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 });
+
+$app->post('/api/addAbo', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->addAbo(json_decode($rawData, true))->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+	return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
+$app->post('/api/changePW', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->updatePW(json_decode($rawData, true))->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+	return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
+$app->post('/api/changeEM', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->updateEM(json_decode($rawData, true))->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+	return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
+$app->delete('/api/deleteAbos/{idAbo}', function (Request $request, Response $response, array $args){
+    $todo_id = $args["idAbo"];
+    if(is_numeric($todo_id)){
+        $todoCreator = new ToDoInterface($this->get('db'));
+        $todo = $todoCreator->deleteAbos($todo_id)->fetchAll(PDO::FETCH_ASSOC);
+        $response->getBody()->write(json_encode($todo));
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+    }
+	return $response->withStatus(400);
+});
+
+
 
 
 

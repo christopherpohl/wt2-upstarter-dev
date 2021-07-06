@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-
-import Card from 'react-tinder-card'
+// import TinderCard from '../react-tinder-card/index'
+import TinderCard from 'react-tinder-card'
 
 const db = [
   {
@@ -54,14 +54,9 @@ function Swipe () {
   }
 
   return (
-
-
-  
-
-      <div className='cardContainer d-flex align-items-center justify-content-center'>
-
+      <div className='cardContainer'>
         {characters.map((character) =>
-          <Card className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+          <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
              <div id="inner-container">
                 <div id="row1">
                 <img id="img1" src={character.url}></img>
@@ -77,7 +72,7 @@ function Swipe () {
                 
                 </div>
             </div>
-          </Card>
+          </TinderCard>
         )}
       </div>
       
