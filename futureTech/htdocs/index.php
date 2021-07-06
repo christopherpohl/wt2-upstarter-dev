@@ -1,4 +1,10 @@
 <?php
+
+
+
+header("Access-Control-Allow-Origin: *");
+
+
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
@@ -81,6 +87,15 @@ $app->post('/api/addUser/', function (Request $request, Response $response, arra
     $response->getBody()->write(json_encode($value));
     return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 });
+
+$app->post('/api/addUser/', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->addUser($args)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
 
 
 $app->run();

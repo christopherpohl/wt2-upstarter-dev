@@ -21,6 +21,14 @@ final class UserInterface {
         return $stmt;
     }
 
+    public function addUser($array){
+        $sql = "INSERT INTO Abo_Profil VALUES (4,1);";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        return $stmt;
+
+    }
+
 
 
 }

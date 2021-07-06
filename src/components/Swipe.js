@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-
+import useFetch from "react-fetch-hook"
 import Card from 'react-tinder-card'
+import axios from 'axios';
 
 const db = [
   {
@@ -41,6 +42,28 @@ const db = [
 ]
 
 function Swipe () {
+ 
+  const { isLoading, data } = useFetch("http://localhost:8080/api/user");
+  console.log(data);
+
+
+
+  axios.post('http://localhost:8080/api/addUser/', {
+    benutzername: 'Added_user',
+    passwort: '129839843',
+    email:"test@added.de",
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+  const new_data = { id: 4, benutzername: "Added_user", passwort:"123456789", email:"test@added.de"  };
+
+  //axios.post('http://localhost:8080/api/user', new_data);
+
   const characters = db
   const [lastDirection, setLastDirection] = useState()
 
@@ -53,27 +76,27 @@ function Swipe () {
     console.log(name + ' left the screen!')
   }
 
-  return (
+  return isLoading ? (
 
-
+    <div>Loading...</div> ): (
   
 
       <div className='cardContainer d-flex align-items-center justify-content-center'>
 
-        {characters.map((character) =>
-          <Card className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+        {data.map((data1) =>
+          <Card className='swipe' key={data1.id} onSwipe={(dir) => swiped(dir, data1.id)} onCardLeftScreen={() => outOfFrame(data1.id)}>
              <div id="inner-container">
                 <div id="row1">
-                <img id="img1" src={character.url}></img>
+                <img id="img1" src="https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png"></img>
                 </div>
                 <div id="row2">
-                <div><h3>{character.name}</h3></div>
-                <div>{character.context}</div>
+                <div><h3>{data1.benutzername}</h3></div>
+                <div>h</div>
                 </div>
                 <div id="row3">
               
-                <img  class="static" src={character.stats_static}></img>
-                <img  id="img2" class="active" src={character.stats}></img>
+                <img  class="static" src=""></img>
+                <img  id="img2" class="active" src=""></img>
                 
                 </div>
             </div>
