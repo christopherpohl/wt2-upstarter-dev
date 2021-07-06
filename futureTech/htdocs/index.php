@@ -36,10 +36,14 @@ $app->options('/{routes:.+}',function($request, $response, $args) {
     return $response;
 });
 
-$app->add(function($request, $handler) {
+$app->add(function ($request, $handler) {
     $response = $handler->handle($request);
-    return $response->withHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->withHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Accept,Origin,Authorization')->withHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,PATCH,OPTIONS');
+    return $response
+            ->withHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
+
 
 // Routen
 $app->get('/{name}', function (Request $request, Response $response,array $args){
@@ -56,6 +60,16 @@ $app->get('/api/user', function (Request $request, Response $response, array $ar
     return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 });
 
+$app->get('/api/username/{username}', function (Request $request, Response $response, array $args){
+    $username = $args["username"];
+ 
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->selectUserByUsername($username)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
+
 $app->get('/api/user/{user_id}', function (Request $request, Response $response, array $args){
     $user_id = $args["user_id"];
     if(is_numeric($user_id)){
@@ -66,6 +80,18 @@ $app->get('/api/user/{user_id}', function (Request $request, Response $response,
     }
 	return $response->withStatus(400);
 });
+
+
+
+
+$app->post('/api/addUser', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->addUser(json_decode($rawData, true))->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+	return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
 
 
 
