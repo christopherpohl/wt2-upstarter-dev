@@ -4,21 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col} from 'react-bootstrap';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-
 import Swipe from './Swipe.js';
 import Footer from './Footer.js';
 import Burger from './Burger.js';
 import Profil from './Profil.js';
 import Buttons from  './Buttons.js';
-
-
 import Login from "./Login";
-
-
-import LoginScreen from './LoginScreen.js';
-
 import Settings from './Settings.js';
-import Dashboard from './Dashboard.js';
+import UpdateProfile from './UpdateProfile.js';
+import Abo from './abo.js';
 
 
 
@@ -49,7 +43,10 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/swipe" component={Swipe} />
           <Route path="/profil" component={Profil} />
-          <Route path="/landing" component={Buttons}/>          
+          <Route path="/landing" component={Buttons}/>  
+          <Route path="/settings" component={Settings}/>   
+          <Route path="/abo" component={Abo}/>   
+          <Route path="/update-profile" component={UpdateProfile}/>     
           <Route path="/" component={Buttons} />
 
           </Switch>

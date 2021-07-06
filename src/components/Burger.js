@@ -16,7 +16,7 @@ function Burger() {
         <div className="burg-links" >
             <ul>
             <li><div className="burg-btn"><a href="/">Ausloggen</a></div></li>
-            <li><div className="burg-btn"><a href="/">Optionen</a></div></li>
+            <li><div className="burg-btn"><a href="/settings">Optionen</a></div></li>
             <li><div className="burg-btn"><a href="/swipe">Swipe Bereich</a></div></li>
             <li><div className="burg-btn"><a href="/profil">Mein Profil</a></div></li>
             <li><div className="burg-btn"><a href="/">Startseite</a></div></li>

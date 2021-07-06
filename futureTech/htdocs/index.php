@@ -66,7 +66,21 @@ $app->get('/api/user/{user_id}', function (Request $request, Response $response,
     }
 	return $response->withStatus(400);
 });
+public function addUser($array){
+    $sql = "INSERT INTO Abo (id) SELECT MAX(id) +1 FROM Abo;INSERT INTO Profil (id) SELECT MAX(id) +1 FROM Profil;INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ((?),(?),(?),(SELECT MAX(id) FROM Profil),(SELECT MAX(id) FROM Abo));";
+    $stmt = $this->connection->prepare($sql);
+    $stmt->execute([$array["benutzername"],$array["passwort"],$array["passwort"]]);
+    return $stmt;
 
+}
+
+$app->post('/api/addUser/', function (Request $request, Response $response, array $args){
+    $rawData = $request->getBody();
+    $userFace = new UserInterface($this->get('db'));
+    $value = $todoCreator->addUser($args)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
 
 
 $app->run();
