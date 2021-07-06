@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import Imgix from "react-imgix";
 import './abo.css'
+import axios from "axios";
 
 
+const api = axios.create({
+  baseURL: "futureTech\prepare.sql"
+})
 const images = [
     {
       name: 'Richard Hendricks',
@@ -48,22 +52,9 @@ const images = [
 
   function Abo () {
  return(
-      
-    <div id="container"> 
-    <div className="gallery">
-       
-      {images.map(image => (
-        <div id="inner-abo-container">
-        <img id="img1" src={image.url}></img>
-        <div class="overlay">{image.name}</div>
-        
-        </div>
-       
-     
-      ))}
 
-    </div>
-    </div>
+  
+
   )};
 
   export default Abo
