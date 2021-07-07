@@ -57,15 +57,35 @@ const images = [
     <div id="container"> 
     <div className="gallery">
        
-      {data.map(datas => (
-        <div id="inner-abo-container">
-        <img id="img1" src='https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png'></img>
-        <div class="overlay">{data.name}</div>
+      {data.map(datas =>  
+
+      {
+        return (
         
-        </div>
+          
+            datas.map(data2 => 
+
+              {
+                return(
+                  <div id="inner-abo-container">
+              <img id="img1" src='https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png'></img>
+              <div class="overlay">{data2.beschreibung}</div>
+
+              </div>
+        
+                )
+              }
+
+            )
+          
+
+         )
+      }
+        
+        
        
      
-      ))}
+      )}
 
     </div>
     </div>

@@ -35,7 +35,28 @@ function App() {
   console.log(localStorage.getItem('user'));
   if(!localStorage.getItem('user')) {
     console.log(localStorage.getItem('user'));
-    return <Login/>
+    return <div className="App">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossOrigin="anonymous"
+    />
+
+    <Container fluid> 
+<Row className="fakeTop"></Row>
+<Row className="middle">
+      <Col lg="3"></Col>
+      <Col lg="6">
+  <Login/>
+</Col >
+</Row >
+<Row className="foot">
+      <Col lg="4"></Col>
+      <Col lg="4"><Footer /></Col>
+    </Row>
+</Container>
+</div>
   }
 
   localStorage.setItem('abos', data);

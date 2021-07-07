@@ -73,5 +73,12 @@ final class UserInterface {
         $stmt->execute([$values]);
         return $stmt;
     }
+
+    public function selectProfileByID($id){
+        $sql = "SELECT * FROM Profil WHERE id = ?;";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt;
+    }
     
 }

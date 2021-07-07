@@ -134,10 +134,36 @@ $app->delete('/api/deleteAbos/{idAbo}', function (Request $request, Response $re
 
 $app->get('/api/abos/{id}', function (Request $request, Response $response, array $args){
     $id = $args["id"];
- 
+    
     $userFace = new UserInterface($this->get('db'));
     $value = $userFace->getAbos($id)->fetchAll(PDO::FETCH_ASSOC);
-    $response->getBody()->write(json_encode($value));
+     $array = array();
+     $array_final = array();
+     
+    
+    foreach($value as $item)
+    {
+        
+        $value2 = $userFace->selectUserByID($item["idProfil"])->fetchAll(PDO::FETCH_ASSOC);
+        array_push($array, $value2);
+   
+    }
+    
+
+    foreach($array as $item2)
+    {   foreach($item2 as $item3)
+            {
+                 $value3 = $userFace->selectProfileByID($item3["id"])->fetchAll(PDO::FETCH_ASSOC);
+                 
+                 array_push($array_final, $value3);
+            }
+        
+
+    }
+
+    
+    $response->getBody()->write(json_encode($array_final));
+    
     return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
 });
 

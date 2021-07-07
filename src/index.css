@@ -42,6 +42,9 @@ a:hover{
   display: flex;
 }
 
+.fakeTop{
+  min-height: 150px; }
+
 .landing-links >ul .lBtn{
   padding-right: 260px;
 }

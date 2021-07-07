@@ -52,25 +52,33 @@ ALTER TABLE `Abo_Profil` ADD CONSTRAINT `Abo_Profil_idProfil_fkey` FOREIGN KEY (
 ALTER TABLE User MODIFY id INTEGER NOT NULL AUTO_INCREMENT;
 
 INSERT INTO Abo VALUES (1);
-INSERT INTO Profil VALUES (1,'MusterBild','MusterBeschreibung','MusterzweiteBild');
-INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ('benutzername','passwort','email',1,1);
+INSERT INTO Profil VALUES (1,'profilBild','Beschreibung','zweiteBIld');
+INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ('ft_user2','einfach2020','ft.de',(SELECT MAX(id) FROM Profil),(SELECT MAX(id) FROM Abo));
+
+INSERT INTO Abo (id) SELECT MAX(id) +1 FROM Abo;
+INSERT INTO Profil (id) SELECT MAX(id) +1 FROM Profil;
+INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ('bbb1','12345','abcd.de',(SELECT MAX(id) FROM Profil),(SELECT MAX(id) FROM Abo));
+
+INSERT INTO Abo (id) SELECT MAX(id) +1 FROM Abo;
+INSERT INTO Profil (id) SELECT MAX(id) +1 FROM Profil;
+INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ('bbb2','12345','abcd.de',(SELECT MAX(id) FROM Profil),(SELECT MAX(id) FROM Abo));
+
+INSERT INTO Abo (id) SELECT MAX(id) +1 FROM Abo;
+INSERT INTO Profil (id) SELECT MAX(id) +1 FROM Profil;
+INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ('bbb3','12345','abcd.de',(SELECT MAX(id) FROM Profil),(SELECT MAX(id) FROM Abo));
+
+INSERT INTO Abo (id) SELECT MAX(id) +1 FROM Abo;
+INSERT INTO Profil (id) SELECT MAX(id) +1 FROM Profil;
+INSERT INTO User (benutzername, passwort, email, idProfil, idAbo) VALUES ('bbb4','12345','abcd.de',(SELECT MAX(id) FROM Profil),(SELECT MAX(id) FROM Abo));
 
 
-delimiter $$
-CREATE TRIGGER user_insert
-    BEFORE INSERT ON User FOR EACH ROW
-    BEGIN
-        DECLARE maxaboid integer;
-        DECLARE maxprofilid INT;
 
-        SELECT MAX(id)+1 INTO maxaboid FROM Abo;
-        SELECT MAX(id)+1 INTO maxprofilid FROM Profil;
+INSERT INTO Abo_Profil VALUES (1,2);
+INSERT INTO Abo_Profil VALUES (1,3);
+INSERT INTO Abo_Profil VALUES (1,4);
+INSERT INTO Abo_Profil VALUES (1,5);
 
-        INSERT INTO Abo (id) VALUE (maxaboid);
-        INSERT INTO Profil (id) VALUE (maxprofilid);
-        set new.idProfil = maxprofilid;
-        set new.idAbo = maxaboid;
-    end $$
-    delimiter ;
-
-
+UPDATE Profil SET beschreibung = '**Beschreiung 2' WHERE id = 2;
+UPDATE Profil SET beschreibung = '**Beschreiung 3' WHERE id = 3;
+UPDATE Profil SET beschreibung = '**Beschreiung 4' WHERE id = 4;
+UPDATE Profil SET beschreibung = '**Beschreiung 5' WHERE id = 5;
