@@ -13,8 +13,8 @@ return(
 <li className="lBtn"><div className="land-btn">
     <a href="/login">Einloggen</a>
 </div></li>
-<li className="rBtn"><div className="land-btn">
-    <a href="/register">Registrieren</a>
+<li  className="rBtn"><div className="land-btn">
+    <a  href="/register">Registrieren</a>
 </div></li>
 </ul>
 </div>

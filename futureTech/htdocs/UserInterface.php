@@ -65,5 +65,13 @@ final class UserInterface {
         $stmt->execute([$values["idAbo"]]);
         return $stmt;
     }
+
+
+    public function getAbos($values){
+        $sql = "SELECT idProfil from Abo_Profil WHERE idAbo = ? ;";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute([$values]);
+        return $stmt;
+    }
     
 }

@@ -132,6 +132,15 @@ $app->delete('/api/deleteAbos/{idAbo}', function (Request $request, Response $re
 	return $response->withStatus(400);
 });
 
+$app->get('/api/abos/{id}', function (Request $request, Response $response, array $args){
+    $id = $args["id"];
+ 
+    $userFace = new UserInterface($this->get('db'));
+    $value = $userFace->getAbos($id)->fetchAll(PDO::FETCH_ASSOC);
+    $response->getBody()->write(json_encode($value));
+    return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+});
+
 
 
 

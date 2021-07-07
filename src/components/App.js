@@ -29,6 +29,8 @@ import useFetch from "react-fetch-hook"
 import axios from 'axios';
 
 function App() {
+  const { isLoading, data } = useFetch("http://localhost:8080/api/abos/"+localStorage.getItem('user'));
+
 
   console.log(localStorage.getItem('user'));
   if(!localStorage.getItem('user')) {
@@ -36,7 +38,13 @@ function App() {
     return <Login/>
   }
 
-  return (
+  localStorage.setItem('abos', data);
+
+  
+  return isLoading ? (
+
+    <div></div> ): (
+
 
     <div className="App">
       <link

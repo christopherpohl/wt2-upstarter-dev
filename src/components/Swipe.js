@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useFetch from "react-fetch-hook"
 import Card from 'react-tinder-card'
 import axios from 'axios';
+import Abo from './abo';
 
 const db = [
   {
@@ -42,9 +43,11 @@ const db = [
 ]
 
 function Swipe () {
- 
-  const { isLoading, data } = useFetch("http://localhost:8080/api/user");
 
+  
+    
+  const { isLoading, data } = useFetch("http://localhost:8080/api/user");
+ 
 
 
 
@@ -74,14 +77,22 @@ function Swipe () {
 
  
 
+  
+
+ 
+
   return isLoading ? (
 
     <div></div> ): (
-  
 
       <div className='cardContainer d-flex align-items-center justify-content-center'>
+          {
+               
 
-        {data.map((data1) =>
+          }
+        {
+        
+        data.map((data1) =>
           <Card className='swipe' key={data1.id} onSwipe={(dir) => swiped(dir, data1.id,data1.idAbo)} onCardLeftScreen={() => outOfFrame(data1.id)}>
              <div id="inner-container">
                 <div id="row1">
@@ -89,7 +100,7 @@ function Swipe () {
                 </div>
                 <div id="row2">
                 <div><h3>{data1.benutzername}</h3></div>
-                <div>h</div>
+                <div>Beschreibung</div>
                 </div>
                 <div id="row3">
               

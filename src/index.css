@@ -33,6 +33,7 @@ a:hover{
 /*Landing */
 .landing-links{
   min-height: 530px;
+  visibility: hidden;
 }
 .land-btn > a{
   font-size: 28px;
@@ -47,6 +48,7 @@ a:hover{
 .landing-links > ul li{
   list-style: none; 
     margin-top: 60%
+    
 }
 
 .land-btn{

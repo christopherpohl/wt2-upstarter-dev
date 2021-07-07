@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Imgix from "react-imgix";
 import './abo.css'
+import useFetch from "react-fetch-hook"
 
 
 const images = [
@@ -47,15 +48,19 @@ const images = [
 
 
   function Abo () {
- return(
+    const { isLoading, data } = useFetch("http://localhost:8080/api/abos/"+localStorage.getItem('user'));
+    console.log(data);
+    return isLoading ? (
+
+      <div></div> ): ( 
       
     <div id="container"> 
     <div className="gallery">
        
-      {images.map(image => (
+      {data.map(datas => (
         <div id="inner-abo-container">
-        <img id="img1" src={image.url}></img>
-        <div class="overlay">{image.name}</div>
+        <img id="img1" src='https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png'></img>
+        <div class="overlay">{data.name}</div>
         
         </div>
        
