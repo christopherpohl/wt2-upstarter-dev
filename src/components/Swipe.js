@@ -46,7 +46,7 @@ function Swipe () {
 
   
     
-  const { isLoading, data } = useFetch("http://localhost:8080/api/user");
+  const { isLoading, data } = useFetch("http://localhost:8080/api/abos/"+localStorage.getItem('user'));
  
 
 
@@ -92,26 +92,52 @@ function Swipe () {
           }
         {
         
-        data.map((data1) =>
-          <Card className='swipe' key={data1.id} onSwipe={(dir) => swiped(dir, data1.id,data1.idAbo)} onCardLeftScreen={() => outOfFrame(data1.id)}>
-             <div id="inner-container">
-                <div id="row1">
-                <img id="img1" src="https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png"></img>
-                </div>
-                <div id="row2">
-                <div><h3>{data1.benutzername}</h3></div>
-                <div>Beschreibung</div>
-                </div>
-                <div id="row3">
-              
-                <img  class="static" src=""></img>
-                <img  id="img2" class="active" src=""></img>
-                {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
-                </div>
-            </div>
-          </Card>
-        )}
+    data.map(datas =>  
+
+{
+  return (
+  
+    
+      datas.map(data2 => 
+
+        {
+          return(
+            <Card className='swipe' key={data2.id} onSwipe={(dir) => swiped(dir, data2.id,data2.id)} onCardLeftScreen={() => outOfFrame(data2.id)}>
+            <div id="inner-container">
+               <div id="row1">
+               <img id="img1" src={data2.bild}></img>
+               </div>
+               <div id="row2">
+               <div><h3>Beschreibung</h3></div>
+               <div>{data2.beschreibung}</div>
+               </div>
+               <div id="row3">
+             
+               <img  class="static" src="https://s20.directupload.net/images/210609/ar5sjvwd.jpg"></img>
+               <img  id="img2" class="active" src=""></img>
+               {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+               </div>
+           </div>
+         </Card>
+  
+          )
+        }
+
+      )
+    
+
+   )
+}
+
+)}
+
+
+
       </div>
+
+
+
+        
       
     
   )

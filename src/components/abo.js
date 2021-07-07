@@ -68,7 +68,7 @@ const images = [
               {
                 return(
                   <div id="inner-abo-container">
-              <img id="img1" src='https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png'></img>
+              <img id="img1" src={data2.bild}></img>
               <div class="overlay">{data2.beschreibung}</div>
 
               </div>
@@ -81,10 +81,7 @@ const images = [
 
          )
       }
-        
-        
-       
-     
+ 
       )}
 
     </div>
