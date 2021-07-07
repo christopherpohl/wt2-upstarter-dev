@@ -11,7 +11,7 @@ import Burger from './Burger.js';
 import Profil from './Profil.js';
 import Buttons from  './Buttons.js';
 import Logout from './logout.js';
-
+import Abo from './abo.js';
 
 
 
@@ -67,6 +67,7 @@ function App() {
           <Route path="/profil" component={Profil} />
           <Route path="/landing" component={Buttons}/>        
           <Route path="/settings" component={Settings}/>   
+          <Route path="/abo" component={Abo}/>   
           <Route path="/" component={Buttons} />
 
           </Switch>

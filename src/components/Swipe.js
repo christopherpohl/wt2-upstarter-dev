@@ -44,7 +44,6 @@ const db = [
 function Swipe () {
  
   const { isLoading, data } = useFetch("http://localhost:8080/api/user");
-  console.log(data);
 
 
 
@@ -53,14 +52,27 @@ function Swipe () {
   const characters = db
   const [lastDirection, setLastDirection] = useState()
 
-  const swiped = (direction, nameToDelete) => {
+  const swiped = (direction, nameToDelete,idAbo) => {
     console.log('removing: ' + nameToDelete)
     setLastDirection(direction)
+    if(direction =="right"){
+      console.log(idAbo);
+      console.log(nameToDelete);
+      fetch('http://localhost:8080/api/addAbo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({idAbo,nameToDelete}) })
+        .then(res => res.json())
+
+    }
+    
+    
   }
 
   const outOfFrame = (name) => {
     console.log(name + ' left the screen!')
+    
+    
   }
+
+ 
 
   return isLoading ? (
 
@@ -70,7 +82,7 @@ function Swipe () {
       <div className='cardContainer d-flex align-items-center justify-content-center'>
 
         {data.map((data1) =>
-          <Card className='swipe' key={data1.id} onSwipe={(dir) => swiped(dir, data1.id)} onCardLeftScreen={() => outOfFrame(data1.id)}>
+          <Card className='swipe' key={data1.id} onSwipe={(dir) => swiped(dir, data1.id,data1.idAbo)} onCardLeftScreen={() => outOfFrame(data1.id)}>
              <div id="inner-container">
                 <div id="row1">
                 <img id="img1" src="https://doepke-logistik.de/wp-content/uploads/2014/12/person-icon-1674.png"></img>
@@ -83,7 +95,7 @@ function Swipe () {
               
                 <img  class="static" src=""></img>
                 <img  id="img2" class="active" src=""></img>
-                
+                {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
                 </div>
             </div>
           </Card>
