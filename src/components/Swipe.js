@@ -47,11 +47,8 @@ function Swipe () {
   
     
   const { isLoading, data } = useFetch("http://localhost:8080/api/abos/"+localStorage.getItem('user'));
- 
 
-
-
-
+  
   const characters = db
   const [lastDirection, setLastDirection] = useState()
 
@@ -75,11 +72,6 @@ function Swipe () {
     
   }
 
- 
-
-  
-
- 
 
   return isLoading ? (
 
@@ -87,13 +79,10 @@ function Swipe () {
 
       <div className='cardContainer d-flex align-items-center justify-content-center'>
           {
-               
 
           }
         {
-        
     data.map(datas =>  
-
 {
   return (
   
@@ -124,8 +113,6 @@ function Swipe () {
         }
 
       )
-    
-
    )
 }
 
